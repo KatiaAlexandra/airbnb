@@ -5,6 +5,7 @@ import Navigation from './src/navigation/Navigation';
 import './gesture-handler';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Loading from './src/kernel/components/Loading';
+import NavigationLogger from './src/navigation/NavigationLogger';
 
 export default function App() {
   const [login, setLogin] = useState(false);
@@ -28,9 +29,9 @@ export default function App() {
     );
   } else {
     if (login){
-      return <Navigation />; //<NavigationLogger />;
+      return <NavigationLogger/>; //<NavigationLogger />;
     } else {
-      return <Navigation />; //<Navigation />;
+      return <Navigation/>; //<Navigation />;
     }
   }
 
